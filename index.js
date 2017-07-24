@@ -8,6 +8,8 @@ const port       = process.env.PORT || 4000;
 const app        = express();
 const dest       = `${__dirname}/public`;
 const env        = require('./config/env');
+const router     = require('./config/routes');
+
 
 mongoose.connect(env.db[process.env.NODE_ENV]);
 
@@ -17,6 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(dest));
+app.use(router);
 
 app.get('/*', (req, res) => res.sendFile(`${dest}/index.html`));
 
