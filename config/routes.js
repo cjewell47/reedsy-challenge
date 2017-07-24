@@ -1,6 +1,7 @@
-const router = express.Router();
+const express = require('express');
+const router  = express.Router();
 
-const docs   = require('../controllers/docs');
+const docs    = require('../controllers/docs');
 
 router.route('/')
 .get(docs.index)
