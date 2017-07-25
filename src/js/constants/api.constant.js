@@ -1,0 +1,3 @@
+angular
+.module('ReedsyQueue')
+.constant('API', 'http://localhost:4000/api');

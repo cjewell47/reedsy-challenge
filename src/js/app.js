@@ -1,2 +1,2 @@
 angular
-.module('ReedsyQueue', []);
+.module('ReedsyQueue', ['ngResource']);

@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(dest));
-app.use(router);
+app.use('/api', router);
 
 app.get('/*', (req, res) => res.sendFile(`${dest}/index.html`));
 
