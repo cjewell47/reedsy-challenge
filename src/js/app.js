@@ -1,2 +1,5 @@
 angular
-.module('ReedsyQueue', ['ngResource']);
+.module('ReedsyQueue', [
+  'ngResource',
+  'ui.router'
+]);
