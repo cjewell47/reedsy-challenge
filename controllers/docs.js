@@ -8,9 +8,11 @@ function index(req, res, next) {
 }
 
 function create(req, res, next) {
+  console.log('REQ*****', req);
   Doc
-  .save()
-  .then((doc) => res.status(201).json(doc))
+  .create(req.body)
+  .then((doc) =>
+  res.status(201).json(doc))
   .catch(next);
 }
 
