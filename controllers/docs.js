@@ -8,7 +8,6 @@ function index(req, res, next) {
 }
 
 function create(req, res, next) {
-  console.log('REQ*****', req);
   Doc
   .create(req.body)
   .then((doc) =>

@@ -7,45 +7,47 @@ function MainCtrl(Doc) {
   const vm = this;
 
   vm.pdf = createPdf;
-  function createPdf() {
-    vm.doc =
-    { doc:
+  vm.pdfdoc =
+  {
+    doc:
     {
       type: 'PDF'
     }
-    };
+  };
 
-    Doc
-    .save(vm.doc)
-    .$promise
-    .then(() => {
-      console.log('pdf created');
-    })
-    .catch(err => {
-      console.log(err);
-    });
+  function createPdf() {
+    // Doc
+    // .save(vm.pdfdoc)
+    // .$promise
+    // .then(() => {
+    //   console.log('pdf created');
+    // })
+    // .catch(err => {
+    //   console.log(err);
+    // });
+    console.log('Creating PDF...');
   }
 
   vm.html = createHtml;
-  function createHtml() {
-    vm.doc =
-    { doc:
+  vm.htmldoc =
+  {
+    doc:
     {
       type: 'HTML'
     }
-    };
+  };
 
-    Doc
-    .save(vm.doc)
-    .$promise
-    .then(() => {
-      console.log('html created');
-    })
-    .catch(err => {
-      console.log(err);
-    });
+  function createHtml() {
+    // Doc
+    // .save(vm.htmldoc)
+    // .$promise
+    // .then(() => {
+    //   console.log('html created');
+    // })
+    // .catch(err => {
+    //   console.log(err);
+    // });
+    console.log('Creating HTML...');
   }
-
-
 
 }

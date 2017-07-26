@@ -11,7 +11,8 @@ const env        = require('./config/env');
 const router     = require('./config/routes');
 
 
-mongoose.connect(env.db[process.env.NODE_ENV]);
+mongoose.connect(env.db[process.env.NODE_ENV],
+  {useMongoClient: true});
 
 app.use(cors());
 app.use(morgan('dev'));

@@ -3,7 +3,7 @@ const router  = express.Router();
 
 const docs    = require('../controllers/docs');
 
-router.route('/')
+router.route('/docs')
 .get(docs.index)
 .post(docs.create);
 
