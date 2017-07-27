@@ -7,20 +7,20 @@ function MainCtrl(Doc) {
   const vm = this;
 
   vm.pdf = createPdf;
-  vm.pdfdoc =
-  {
-    doc:
-    {
-      type: 'PDF'
-    }
-  };
 
   function createPdf() {
+
+    vm.doc =
+    {
+      type: 'PDF'
+    };
+
+    vm.createDoc();
     // Doc
     // .save(vm.pdfdoc)
     // .$promise
-    // .then(() => {
-    //   console.log('pdf created');
+    // .then((doc) => {
+    //   console.log(doc, 'pdf created');
     // })
     // .catch(err => {
     //   console.log(err);
@@ -29,25 +29,38 @@ function MainCtrl(Doc) {
   }
 
   vm.html = createHtml;
-  vm.htmldoc =
-  {
-    doc:
-    {
-      type: 'HTML'
-    }
-  };
 
   function createHtml() {
+    vm.doc =
+    {
+      type: 'HTML'
+    };
+
+    vm.createDoc();
+
     // Doc
     // .save(vm.htmldoc)
     // .$promise
-    // .then(() => {
-    //   console.log('html created');
+    // .then((doc) => {
+    //   console.log(doc, 'html created');
     // })
     // .catch(err => {
     //   console.log(err);
     // });
     console.log('Creating HTML...');
+  }
+
+  vm.createDoc = createDoc;
+  function createDoc() {
+    Doc
+    .save(vm.doc)
+    .$promise
+    .then((doc) => {
+      console.log(doc, 'html created');
+    })
+    .catch(err => {
+      console.log(err);
+    });
   }
 
 }

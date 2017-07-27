@@ -4,7 +4,7 @@ angular
 
 Doc.$inject = ['API', '$resource'];
 function Doc(API, $resource) {
-  return $resource(`${API}/docs`,
+  return $resource(`${API}/docs/:id`,
     { id: '@_id' }
   );
 }
